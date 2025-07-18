@@ -1,25 +1,284 @@
-body {
-    font-family: Arial, sans-serif;
+/* Provided CSS */
+* {
     margin: 0;
     padding: 0;
-    text-align: center;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
 header {
-    padding: 50px;
-    background: #f9f9f9;
+    background: white;
+    border-bottom: 1px solid #e1e5e9;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
-h1 {
-    font-size: 3em;
-}
-.featured {
+
+.header-content {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #635bff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #635bff;
+}
+
+/* Hero Section */
+.hero {
+    background: white;
+    padding: 4rem 0;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+}
+
+.hero .dot {
+    color: #635bff;
+}
+
+.hero .dev-text {
+    font-family: 'Courier New', monospace;
+    background: #f1f1f1;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 3.5rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: #666;
+    max-width: 800px;
+    margin-bottom: 3rem;
+}
+
+/* Section Headers */
+.section-header {
+    padding: 2rem 0 1rem;
+    border-bottom: 1px solid #e1e5e9;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Featured Blogs Grid (reusing .featured-videos) */
+.featured-videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.video-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 250px;
+    background: #f8f9fa;
+    border: 1px solid #e1e5e9;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    position: relative;
+    overflow: hidden;
 }
-.post {
-    width: 30%;
+
+.video-thumbnail svg {
+    width: 150px;
+    height: 150px;
+    opacity: 0.3;
 }
-img {
-    max-width: 100%;
+
+.video-card-content {
+    padding: 1.5rem;
+}
+
+.video-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+
+.video-card p {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.video-meta {
+    font-size: 0.9rem;
+    color: #999;
+    font-weight: 500;
+}
+
+/* Geometric patterns for thumbnails */
+.pattern-1 {
+    background: linear-gradient(45deg, #f8f9fa 25%, transparent 25%, transparent 75%, #f8f9fa 75%, #f8f9fa),
+                linear-gradient(45deg, #f8f9fa 25%, transparent 25%, transparent 75%, #f8f9fa 75%, #f8f9fa);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+}
+
+.pattern-2 {
+    background: radial-gradient(circle at 25% 25%, #e1e5e9 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, #e1e5e9 2px, transparent 2px);
+    background-size: 30px 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .dev-text {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .featured-videos {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Hover effects */
+.video-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.video-card h3:hover {
+    color: #635bff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* Added: Blog Upload Form (optional for local testing) */
+#blog-upload {
+    padding: 2rem 0;
+}
+
+#blog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#blog-content {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e1e5e9;
+    border-radius: 4px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+#blog-date {
+    padding: 0.5rem;
+    border: 1px solid #e1e5e9;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+#blog-form button {
+    padding: 0.75rem;
+    background: #635bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+#blog-form button:hover {
+    background: #4b44cc;
 }

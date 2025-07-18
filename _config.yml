@@ -1,0 +1,11 @@
+title: Pranav's Blog
+description: Pranav's blog on art, philosophy, physics, ai, books, travel, and life
+baseurl: "/fermats-next-theorem" # Set to "/repo-name" if hosting in a project repository
+url: "https://pranavrajmane.github.io/Fermats-next-theorem/" # Replace with your GitHub Pages URL
+theme: # Optional: Use a theme or leave blank for custom
+plugins:
+  - jekyll-feed
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Stripe Dot Dev</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">stripe.dev</div>
+                <nav>
+                    <ul>
+                        <li><a href="{{ site.baseurl }}/#blog">BLOG</a></li>
+                        <li><a href="{{ site.baseurl }}/#X">𝕏</a></li>
+                        <li><a href="{{ site.baseurl }}/#contact">CONTACT</a></li>
+                        <li><a href="{{ site.baseurl }}/#github">GITHUB</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="section-header">
+                <h2>{{ page.title }}</h2>
+            </div>
+            <div class="video-card-content">
+                <p class="video-meta">[ {{ page.date | date: "%b %-d, %Y" | upcase }} ]</p>
+                {{ content }}
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ site.baseurl }}/js/script.js"></script>
+</body>
+</html>
