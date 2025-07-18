@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header {
+    padding: 50px;
+    background: #f9f9f9;
+}
+h1 {
+    font-size: 3em;
+}
+.featured {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.post {
+    width: 30%;
+}
+img {
+    max-width: 100%;
+}
